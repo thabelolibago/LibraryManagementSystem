@@ -1,0 +1,25 @@
+﻿<Window x:Class="Library_Management_System.LoginForm"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        
+        Title="Librarian Login" Width="1116"  Height="734" Background="#FFFFFF" WindowStartupLocation="CenterScreen">
+    <Grid HorizontalAlignment="Center" Width="1116">
+        <Label Content="Username" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="595,290,0,0" RenderTransformOrigin="0.515,2.837" FontSize="18" />
+        <TextBox Name="UsernameTextBox" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="690,292,0,0" Width="200" Height="30" Background="GhostWhite" BorderBrush="#FF2AA212" FontSize="18" />
+
+        <Label Content="Password" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="595,339,0,0" FontSize="18" />
+        <PasswordBox Name="PasswordBox" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="690,341,0,0" Width="200" Height="30" Background="GhostWhite" BorderBrush="#FF2AA212" FontSize="18" />
+
+        <TextBlock Name="ErrorMessage" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="150,180,0,0" Foreground="Red" />
+        <TextBlock HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="24" Margin="595,180,0,0" FontWeight="Bold" RenderTransformOrigin="0.49,2.754" ><Run Text="Sign in to continue"/><Run Language="en-za" Text=" 📚"/></TextBlock>
+        <Button Width="100" VerticalAlignment="Top" RenderTransformOrigin="0.519,3.426" Margin="690,400,0,0" HorizontalAlignment="Left" Content="Login" Click="LoginButton" Background="#FF2AA212" Height="30" Foreground="GhostWhite" FontSize="18" BorderBrush="#FF2AA212"/>
+        
+        <Popup Name="ErrorPopup" PlacementTarget="{Binding ElementName=LoginButton}" Placement="Bottom" StaysOpen="False">
+            <Border Background="LightPink" BorderBrush="Red" BorderThickness="2" Padding="10">
+                <TextBlock Name="PopupMessage" Foreground="Red" />
+            </Border>
+        </Popup>
+        
+        <Image Margin="71,86,609,86" Source="/Images/library-1963637_1280.png" Stretch="Fill"/>
+    </Grid>
+</Window>

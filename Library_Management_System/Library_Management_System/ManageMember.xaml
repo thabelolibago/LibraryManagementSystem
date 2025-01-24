@@ -1,0 +1,62 @@
+﻿<Window x:Class="Library_Management_System.ManageMembers"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Library_Management_System"
+        mc:Ignorable="d"
+        Title="ManageMember" Width="1116"  Height="734" Background="#FFFFFF" WindowStartupLocation="CenterScreen">
+    <Grid>
+       
+        <TextBlock HorizontalAlignment="Left" Height="37" Margin="80,45,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="283" FontSize="24" FontWeight="Bold">
+            <Run Text="Manage Members"/><Run Language="en-za" Text=" 👩‍👧‍👦"/>
+        </TextBlock>
+
+        
+        <Button Content="←" Click="BackManageButton" HorizontalAlignment="Left" Height="22" Margin="958,45,0,0" VerticalAlignment="Top" Width="44" Background="GhostWhite" BorderBrush="Black"/>
+        <Button Content="X" Click="CloseManageButton" HorizontalAlignment="Left" Height="22" Margin="1022,45,0,0" VerticalAlignment="Top" Width="44" Background="#FFEC1212" Foreground="White" BorderBrush="#FFEC1212"/>
+
+        
+        <Button Content="Add New Member" HorizontalAlignment="Left" Height="60" Margin="80,182,0,0" VerticalAlignment="Top" Width="234" FontSize="18" Background="#FF2AA212" BorderBrush="#FF2AA212" Foreground="GhostWhite" Click="AddNewMember"/>
+
+        
+        <TextBox x:Name="SearchTextBox" HorizontalAlignment="Left" Height="46" Margin="434,241,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="283" Background="GhostWhite" BorderBrush="#FF2AA212" FontSize="18" />
+
+        
+        <Button Content="Search" HorizontalAlignment="Left" Height="46" Margin="924,241,0,0" VerticalAlignment="Top" Width="142" FontSize="18" Click="SearchButton_Click" BorderBrush="#FF2AA212" Background="#FF2AA212" Foreground="GhostWhite"/>
+
+        
+        <ListView x:Name="SearchedMember" HorizontalAlignment="Left" Height="123" Margin="434,319,0,0" VerticalAlignment="Top" Width="632" SelectionMode="Single" Background="GhostWhite" Foreground="Black" BorderBrush="#FF2AA212">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="ID" DisplayMemberBinding="{Binding Member_ID}" Width="50"/>
+                    <GridViewColumn Header="Names" DisplayMemberBinding="{Binding Names}" Width="160"/>
+                    <GridViewColumn Header="Member Address" DisplayMemberBinding="{Binding Member_Address}" Width="160"/>
+                    <GridViewColumn Header="Contact Number" DisplayMemberBinding="{Binding Contact_Number}" Width="100"/>
+                    <GridViewColumn Header="Email" DisplayMemberBinding="{Binding Email}" Width="150"/>
+                </GridView>
+            </ListView.View>
+        </ListView>
+
+       
+        <Button Content="Edit Member" HorizontalAlignment="Left" Height="46" Margin="434,461,0,0" VerticalAlignment="Top" Width="212" FontSize="18" Click="EditMemberButton" Background="#FF79D267" Foreground="GhostWhite" BorderBrush="#FF79D267" RenderTransformOrigin="0.255,0.41"/>
+        <Button Content="Delete Member" HorizontalAlignment="Left" Height="46" Margin="692,461,0,0" VerticalAlignment="Top" Width="212" FontSize="18" Click="DeleteMemberButton_Click" BorderBrush="#FFEC1212" Foreground="GhostWhite" Background="#FFEC1212"/>
+
+        
+        <ComboBox x:Name="FilterButton"  HorizontalAlignment="Left" Height="46" Margin="745,241,0,0" VerticalAlignment="Top" Width="106" BorderBrush="#FF2AA212" SelectedIndex="0">
+            <ComboBox.Background>
+                <LinearGradientBrush EndPoint="0,1">
+                    <GradientStop Color="#FFF0F0F0"/>
+                    <GradientStop Color="GhostWhite" Offset="1"/>
+                </LinearGradientBrush>
+            </ComboBox.Background>
+            <ComboBoxItem Content="Names"/>
+            <ComboBoxItem Content="Email"/>
+            <ComboBoxItem Content="Member Number"/>
+            <ComboBoxItem Content="Contact Number"/>
+        </ComboBox>
+        <TextBlock HorizontalAlignment="Left" Height="30" Margin="434,182,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="283" FontSize="16">
+            <Run Language="en-za" Text="Search existing member, edit, delete:"/>
+        </TextBlock>
+    </Grid>
+</Window>

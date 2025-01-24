@@ -1,0 +1,48 @@
+﻿<Window
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:av="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="av"
+    x:Class="Library_Management_System.SearchBook"
+    Title="Search for a Book" Width="1116"  Height="734" Background="#FFFFFF" WindowStartupLocation="CenterScreen">
+    <Grid>
+        <TextBlock HorizontalAlignment="Left" Height="23" Margin="87,186,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="295" FontSize="16" FontWeight="Bold"><Run Language="en-za" Text="Choose one of the options below:"/></TextBlock>
+        <TextBox x:Name="SearchTextBox" HorizontalAlignment="Left" Height="38" Margin="87,126,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="427" Background="GhostWhite" BorderBrush="#FF2AA212" FontSize="18"/>
+
+        <RadioButton x:Name="TitleRadio" Content="Title" HorizontalAlignment="Left" Margin="87,224,0,0" VerticalAlignment="Top" FontWeight="Bold" Checked="RadioButtonChecked" BorderBrush="#FF2AA212"/>
+        <RadioButton x:Name="AuthorRadio" Content="Author" HorizontalAlignment="Left" Margin="133,224,0,0" VerticalAlignment="Top" FontWeight="Bold" Checked="RadioButtonChecked" BorderBrush="#FF2AA212"/>
+        <RadioButton x:Name="YearRadio" Content="Year" HorizontalAlignment="Left" Margin="194,224,0,0" VerticalAlignment="Top" FontWeight="Bold" Checked="RadioButtonChecked" BorderBrush="#FF2AA212"/>
+        <RadioButton x:Name="ISBNRadio" Content="ISBN" HorizontalAlignment="Left" Margin="240,224,0,0" VerticalAlignment="Top" FontWeight="Bold" Checked="RadioButtonChecked" BorderBrush="#FF2AA212"/>
+        <RadioButton x:Name="GenreRadio" Content="Genre" HorizontalAlignment="Left" Margin="289,224,0,0" VerticalAlignment="Top" FontWeight="Bold" Checked="RadioButtonChecked" BorderBrush="#FF2AA212"/>
+
+
+        <Button Content="Search" Click="SearchButton" HorizontalAlignment="Left" Height="38" Margin="587,126,0,0" VerticalAlignment="Top" Width="100" BorderBrush="#FF2AA212" Background="#FF2AA212" FontSize="18" Foreground="GhostWhite"/>
+        <TextBlock HorizontalAlignment="Left" Height="25" Margin="88,296,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="253" FontSize="16" FontWeight="Bold"><Run Text="Select "/><Run Language="en-za" Text="the book"/><Run Text=" "/><Run Language="en-za" Text="to borrow"/><Run Text="."/></TextBlock>
+
+        <Button Content="New Member" Click="NewMemberButton" HorizontalAlignment="Left" Height="38" Margin="87,551,0,0" VerticalAlignment="Top" Width="136" Background="#FF2AA212" BorderBrush="#FF2AA212" Foreground="GhostWhite" FontSize="18"/>
+        <Button Content="Existing Member" Click="ExistingMemberMemberButton" HorizontalAlignment="Left" Height="38" Margin="263,551,0,0" VerticalAlignment="Top" Width="160" Background="#FF79D267" BorderBrush="#FF2AA212" Foreground="GhostWhite" FontSize="18" RenderTransformOrigin="0.768,0.562"/>
+        <TextBlock HorizontalAlignment="Left" Height="23" Margin="88,513,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="439" FontSize="16"><Run Text="To proceed to borrow book choose one of the options below"/><Run Language="en-za" Text=":"/></TextBlock>
+        <TextBlock HorizontalAlignment="Left" Height="26" Margin="88,39,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="413" FontSize="24" FontWeight="Bold"><Run Text="Search for a book"/><Run Language="en-za" Text=" 📕"/></TextBlock>
+        <TextBlock HorizontalAlignment="Left" Height="26" Margin="88,39,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="413" FontSize="24" FontWeight="Bold"><Run Text="Search for a book"/><Run Language="en-za" Text=" 📕"/></TextBlock>
+        <Button Content="←" Click="BackSearchBookButton" HorizontalAlignment="Left" Height="22" Margin="956,44,0,0" VerticalAlignment="Top" Width="44" Background="GhostWhite" BorderBrush="Gray"/>
+        <Button Content="X" Click="CloseSearchBookButton" HorizontalAlignment="Left" Height="22" Margin="1020,44,0,0" VerticalAlignment="Top" Width="44" Background="#FFEC1212" Foreground="White" BorderBrush="#FFEC1212"/>
+        <ListView x:Name="ResultsListView" Margin="87,339,0,213" Background="GhostWhite" FontSize="8" SelectionChanged="ResultsListView_SelectionChanged" HorizontalAlignment="Left" Width="600" BorderBrush="#FF2AA212" Foreground="Black">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="Title" DisplayMemberBinding="{Binding Title}" Width="150"/>
+                    <GridViewColumn Header="Author" DisplayMemberBinding="{Binding Author}" Width="100"/>
+                    <GridViewColumn Header="Year" DisplayMemberBinding="{Binding Publication_Year}" Width="30"/>
+                    <GridViewColumn Header="ISBN" DisplayMemberBinding="{Binding ISBN}" Width="70"/>
+                    <GridViewColumn Header="Genre" DisplayMemberBinding="{Binding Genre}" Width="140"/>
+                    <GridViewColumn Header="Status" DisplayMemberBinding="{Binding Book_Status}" Width="80"/>
+                </GridView>
+            </ListView.View>
+        </ListView>
+        <Image Margin="734,198,52,36" Source="/Images/girl-160169_1280.png" Stretch="Fill"/>
+
+
+
+    </Grid>
+</Window>
+

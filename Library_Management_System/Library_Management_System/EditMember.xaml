@@ -1,0 +1,24 @@
+﻿<Window x:Class="Library_Management_System.EditMember"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Edit Member" Width="1116"  Height="734" Background="#FFFFFF" WindowStartupLocation="CenterScreen">
+    <Grid>
+        <TextBox x:Name="Names" HorizontalAlignment="Left" Height="30" Margin="446,233,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="400" Background="GhostWhite" BorderBrush="#FF2AA212" FontSize="18"/>
+        <TextBlock HorizontalAlignment="Left" Height="33" Margin="287,233,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="68" FontSize="18"><Run Language="en-za" Text="Names"/></TextBlock>
+        <TextBox x:Name="Address" HorizontalAlignment="Left" Height="30" Margin="446,306,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="400" Background="GhostWhite" BorderBrush="#FF2AA212" FontSize="18"/>
+        <TextBlock HorizontalAlignment="Left" Height="33" Margin="287,306,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="68" FontSize="18"><Run Language="en-za" Text="Address"/></TextBlock>
+        <TextBox x:Name="Contact_Number" HorizontalAlignment="Left" Height="33" Margin="446,376,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="400" Background="GhostWhite" BorderBrush="#FF2AA212" FontSize="18"/>
+        <TextBlock HorizontalAlignment="Left" Height="33" Margin="287,376,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="143" FontSize="18"><Run Language="en-za" Text="Contact Number"/></TextBlock>
+        <TextBox x:Name="Email" HorizontalAlignment="Left" Height="33" Margin="446,455,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="400" Background="GhostWhite" BorderBrush="#FF2AA212" FontSize="18"/>
+        <TextBlock HorizontalAlignment="Left" Height="33" Margin="287,455,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="143" FontSize="18"><Run Language="en-za" Text="Email"/></TextBlock>
+        <TextBlock HorizontalAlignment="Left" Height="38" Margin="118,41,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="312" FontSize="24" FontWeight="Bold"><Run Language="en-za" Text="Edit Member Information"/></TextBlock>
+        <Button Content="←" Click="BackEditMemberButton" HorizontalAlignment="Left" Height="22" Margin="958,45,0,0" VerticalAlignment="Top" Width="44" Background="GhostWhite" BorderBrush="Black"/>
+        <Button Content="X" Click="CloseEditMemberButton" HorizontalAlignment="Left" Height="22" Margin="1022,45,0,0" VerticalAlignment="Top" Width="44" Background="#FFEC1212" Foreground="White" BorderBrush="#FFEC1212"/>
+        <Button Content="Update" Click="UpdateButton" HorizontalAlignment="Center" Height="30" Margin="0,535,0,0" VerticalAlignment="Top" Width="100" Background="#FF2AA212" BorderBrush="#FF2AA212" Foreground="White" FontSize="18"/>
+        <TextBlock HorizontalAlignment="Left" Height="33" Margin="287,169,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="143" FontSize="18"><Run Language="en-za" Text="Member Number"/></TextBlock>
+        <TextBlock x:Name="Member_IDTextBlock" HorizontalAlignment="Left" Height="34" Margin="446,168,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="400" Background="GhostWhite" FontSize="18"/>
+
+
+    </Grid>
+</Window>
+

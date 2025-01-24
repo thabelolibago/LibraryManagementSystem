@@ -1,0 +1,62 @@
+﻿<Window x:Class="Library_Management_System.Transaction"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Library_Management_System"
+        mc:Ignorable="d"
+        Title="Transaction" Width="1116"  Height="734" Background="#FFFFFF" WindowStartupLocation="CenterScreen">
+    <Grid>
+        <TextBlock HorizontalAlignment="Left" Margin="64,25,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="24" FontWeight="Bold" Text="Transactions Records"/>
+
+        <TextBlock HorizontalAlignment="Left" Margin="64,61,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="18"><Run Language="en-za" Text="Borrowed Books"/></TextBlock>
+
+        <TextBox x:Name="searchBorrowedBox"  HorizontalAlignment="Left" Height="30" Margin="64,93,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="300" FontSize="18" Background="GhostWhite" BorderBrush="#FF2AA212"  />
+
+        <Button  Content="SEARCH" Click="searchBorrowedBooks" HorizontalAlignment="Left" Height="30" Margin="650,93,0,0" VerticalAlignment="Top" Width="100" Background="#FF2AA212" BorderBrush="#FF2AA212" Foreground="GhostWhite" RenderTransformOrigin="0.216,0.529"/>
+
+        <ListView x:Name="listOfBorrowedBooks" Height="206" Background="GhostWhite" FontSize="10" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="64,148,0,0" Foreground="Black" Width="1000" BorderBrush="#FF2AA212">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="Book ID" DisplayMemberBinding="{Binding Book_ID}" Width="50"/>
+                    <GridViewColumn Header="Title" DisplayMemberBinding="{Binding Title}" Width="230"/>
+                    <GridViewColumn Header="ISBN" DisplayMemberBinding="{Binding ISBN}" Width="150"/>
+                    <GridViewColumn Header="Member Number" DisplayMemberBinding="{Binding Member_ID}" Width="150"/>
+                    <GridViewColumn Header="Names" DisplayMemberBinding="{Binding Names}" Width="150"/>
+                    <GridViewColumn Header="Loan Date" DisplayMemberBinding="{Binding Loan_Date}" Width="120"/>
+                    <GridViewColumn Header="Due Date" DisplayMemberBinding="{Binding Due_Date}" Width="120"/>
+                </GridView>
+            </ListView.View>
+        </ListView>
+        <TextBlock HorizontalAlignment="Left" Margin="64,359,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="18"><Run Language="en-za" Text="Returned"/><Run Text=" Books"/></TextBlock>
+
+        <TextBox x:Name="searchReturnedBox" HorizontalAlignment="Left" Height="30" Margin="64,394,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="300" Background="GhostWhite" FontSize="18" BorderBrush="#FF2AA212" />
+
+        <Button Content="SEARCH" Click="SearchReturnedBooks" HorizontalAlignment="Left" Height="30" Margin="650,394,0,0" VerticalAlignment="Top" Width="100" Background="#FF2AA212" BorderBrush="#FF2AA212" Foreground="GhostWhite"/>
+        <ListView x:Name="listOfReturnedBooks" Height="206" Background="GhostWhite" FontSize="10" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="64,439,0,0" Foreground="Black" Width="1000" BorderBrush="#FF2AA212">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="Book ID" DisplayMemberBinding="{Binding Book_ID}" Width="50"/>
+                    <GridViewColumn Header="Title" DisplayMemberBinding="{Binding Title}" Width="230"/>
+                    <GridViewColumn Header="ISBN" DisplayMemberBinding="{Binding ISBN}" Width="150"/>
+                    <GridViewColumn Header="Member Number" DisplayMemberBinding="{Binding Member_ID}" Width="150"/>
+                    <GridViewColumn Header="Names" DisplayMemberBinding="{Binding Names}" Width="150"/>
+                    <GridViewColumn Header="Loan Date" DisplayMemberBinding="{Binding Loan_Date}" Width="120"/>
+                    <GridViewColumn Header="Returned Date" DisplayMemberBinding="{Binding Return_Date}" Width="120"/>
+                </GridView>
+            </ListView.View>
+        </ListView>
+        <Button Content="←" Click="BackTransactionButton" HorizontalAlignment="Left" Height="22" Margin="958,29,0,0" VerticalAlignment="Top" Width="44" Background="GhostWhite" BorderBrush="Black"/>
+        <Button Content="X" Click="CloseTransactionButton" HorizontalAlignment="Left" Height="22" Margin="1020,29,0,0" VerticalAlignment="Top" Width="44" Background="#FFEC1212" Foreground="White" BorderBrush="#FFEC1212"/>
+        
+        <Button Content="DOWNLOAD" Click="DownloadBorrowedBooks" HorizontalAlignment="Left" Height="30" Margin="964,93,0,0" VerticalAlignment="Top" Width="100" Background="#FF2AA212" BorderBrush="#FF2AA212" Foreground="GhostWhite"/>
+        
+        <Button Content="DOWNLOAD" Click="DownloadReturnedBooks" HorizontalAlignment="Left" Height="30" Margin="964,394,0,0" VerticalAlignment="Top" Width="100" Background="#FF2AA212" BorderBrush="#FF2AA212" Foreground="GhostWhite"/>
+        
+        <TextBlock HorizontalAlignment="Left" Margin="412,100,0,0" TextWrapping="Wrap" VerticalAlignment="Top"><Run Language="en-za" Text="Search by ISBN"/></TextBlock>
+        <TextBlock HorizontalAlignment="Left" Margin="412,401,0,0" TextWrapping="Wrap" VerticalAlignment="Top"><Run Language="en-za" Text="Search by Member Number"/></TextBlock>
+        <Button Content="REFRESH" Click="RefreshBorrowedBooks" HorizontalAlignment="Left" Height="30" Margin="769,93,0,0" VerticalAlignment="Top" Width="100" Background="#FF2AA212" BorderBrush="#FF2AA212" Foreground="GhostWhite"/>
+        <Button Content="REFRESH" Click="RefreshReturnedBooks" HorizontalAlignment="Left" Height="30" Margin="769,394,0,0" VerticalAlignment="Top" Width="100" Background="#FF2AA212" BorderBrush="#FF2AA212" Foreground="GhostWhite"/>
+
+    </Grid>
+</Window>

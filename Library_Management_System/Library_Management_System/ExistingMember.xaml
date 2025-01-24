@@ -1,0 +1,50 @@
+﻿<Window x:Class="Library_Management_System.ExistingMember"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Existing Member" Width="1116"  Height="734" Background="#FFFFFF" WindowStartupLocation="CenterScreen">
+
+    <Grid>
+
+
+
+        <TextBox x:Name="searhBox" HorizontalAlignment="Left" Margin="42,46,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="400" Height="30" Background="GhostWhite" FontSize="18" />
+
+
+
+
+        <TextBlock HorizontalAlignment="Left" Height="20" Margin="50,306,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="132" FontSize="18"><Run Language="en-za" Text="Selected books"/></TextBlock>
+
+        <Button Content="Continue to borrow book" Click="ContinueButtonExistingMember"  Background="#FF2AA212"  Height="60" Margin="762,591,76,0" VerticalAlignment="Top" FontSize="18" BorderBrush="#FF2AA212" FontWeight="Bold" Foreground="White"/>
+
+        <Button Content="←" Click="BackExistingButton" HorizontalAlignment="Left" Height="22" Margin="963,14,0,0" VerticalAlignment="Top" Width="44" Background="GhostWhite" BorderBrush="Black" />
+
+        <Button Content="X" Click="CloseExiButton" HorizontalAlignment="Left" Height="22" Margin="1018,14,0,0" VerticalAlignment="Top" Width="44" Background="#FFEC1212" Foreground="White" BorderBrush="#FFEC1212"/>
+        <Border BorderBrush="#FF2AA212" BorderThickness="1" HorizontalAlignment="Left" Height="280" Margin="42,348,0,0" VerticalAlignment="Top" Width="558" Background="#FFB2BFB2">
+            <ListView x:Name="SelectedExistingMemberBooks" Height="206" Background="GhostWhite" FontSize="10" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="Black">
+                <ListView.View>
+                    <GridView>
+                        <GridViewColumn Header="Book ID" DisplayMemberBinding="{Binding Book_ID}" Width="50"/>
+                        <GridViewColumn Header="Title" DisplayMemberBinding="{Binding Title}" Width="300"/>
+                        <GridViewColumn Header="ISBN" DisplayMemberBinding="{Binding ISBN}" Width="150"/>
+                    </GridView>
+                </ListView.View>
+            </ListView>
+        </Border>
+        <TextBlock HorizontalAlignment="Left" Margin="42,17,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="18" FontWeight="Bold"><Run Language="en-za" Text="Search Member"/></TextBlock>
+        <Button Content="Search" Click="SearchButton" HorizontalAlignment="Left" Height="30" Margin="582,46,0,0" VerticalAlignment="Top" Width="100" RenderTransformOrigin="0.484,0.094" FontSize="18" Background="#FF2AA212" BorderBrush="#FF2AA212" Foreground="GhostWhite"/>
+        <TextBlock HorizontalAlignment="Left" Height="23" Margin="42,101,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="295" FontSize="16" FontWeight="Bold"><Run Language="en-za" Text="Choose one of the options below:"/></TextBlock>
+        <RadioButton x:Name="NamesRadioButton" Content="Names" HorizontalAlignment="Left" Height="20" Margin="42,137,0,0" VerticalAlignment="Top" Width="66" BorderBrush="#FF2AA212"/>
+        <RadioButton x:Name="MemberNumberRadioButton" Content="Member Number"  HorizontalAlignment="Left" Height="20" Margin="157,137,0,0" VerticalAlignment="Top" Width="116" BorderBrush="#FF2AA212"/>
+        <ListView x:Name="SearchedMemberResults" HorizontalAlignment="Left" Height="123" Margin="42,168,0,0" VerticalAlignment="Top" Width="640" SelectionMode="Single" Foreground="Black">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="ID" DisplayMemberBinding="{Binding Member_ID}" Width="40"/>
+                    <GridViewColumn Header="Names" DisplayMemberBinding="{Binding Names}" Width="140"/>
+                    <GridViewColumn Header="Member Address" DisplayMemberBinding="{Binding Member_Address}" Width="150"/>
+                    <GridViewColumn Header="Contact Number" DisplayMemberBinding="{Binding Contact_Number}" Width="120"/>
+                    <GridViewColumn Header="Email" DisplayMemberBinding="{Binding Email}" Width="150"/>
+                </GridView>
+            </ListView.View>
+        </ListView>
+    </Grid>
+</Window> 
