@@ -15,6 +15,7 @@ namespace Library_Management_System
 			{
 				connectionString = ConfigurationManager.ConnectionStrings["LibraryDB"].ConnectionString;
 			}
+			
 			return connectionString;
 		}
 	}
